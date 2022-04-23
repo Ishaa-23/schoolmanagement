@@ -2,10 +2,11 @@
 class Database {
 	private $_connection;
 	private static $_instance; //The single instance
-	private $_host = "localhost";
+	private $_host = "containers-us-west-43.railway.app";
 	private $_username = "root";
-	private $_password = "";
-	private $_database = "schoolmanagement";
+	private $_password = "rXfDnNDnqRWXUn24H1eI";
+	private $_database = "railway";
+	private $_port = "6281";
 	/*
 	Get an instance of the Database
 	@return Instance
@@ -18,7 +19,7 @@ class Database {
 	}
 	// Constructor
 	public function __construct() {
-		$this->_connection = new mysqli($this->_host, $this->_username,	$this->_password, $this->_database);
+		$this->_connection = new mysqli($this->_host, $this->_username,	$this->_password, $this->_database, $this->_port);
 	
 		// Error handling
 		if(mysqli_connect_error()) {
